@@ -16,7 +16,8 @@ if(!require(atRfunctions)) remotes::install_github("atrcodebase/atRfunctions")
 `%notin%` <- Negate(`%in%`)
 
 # Declaring Global Variables ---------------------------------------------------
-data_collection_start_date = as.Date("13.04.2024", format("%d.%m.%Y")) # Confirm with QAT
+data_collection_start_date_ps = as.Date("14.04.2024", format("%d.%m.%Y")) # Confirm with QAT
+data_collection_start_date_cbe = as.Date("06.04.2024", format("%d.%m.%Y")) # Confirm with QAT
 qa_sheet_url_ps = "https://docs.google.com/spreadsheets/d/1h90Z42H3V8SVKdfoywKc-x8o8m2Xr1JbhrEWykQOHVw/edit#gid=473078450"
 
 
@@ -259,31 +260,27 @@ source("R/check_select_multiple_questions.R")
 
 
 # re-calculate the calculated variables and compare any changes not applied - NOT
-source("R/calculate_cols_check.R") ## Double-check
+source("R/calculate_cols_check.R") 
 
 
 # Outlier Check ----------------------------------------------------------- NOT
-# source("R/check_outliers.R") ## Double-check
+# source("R/check_outliers.R") 
 
 
 # Relevancy Check --------------------------------------------------------- NOT
 source("R/check_relevancies.R") 
 
 
-# Check the responses with the tool --------------------------------------- NOT
-# source("R/compare_df_values_with_tool.R")
+# Check the responses with the tool --------------------------------------- DONE - must be checked
+source("R/compare_df_values_with_tool.R")
 
 
 # attach value labels  ---------------------------------------------------------
 source("R/attach_labels.R")
 
 
-# re-code variables ------------------------------------------------------- NOT
-# source("R/recoded_vars.R") 
-
-
 # Logical inconsistencies ------------------------------------------------- NOT
-# source("R/logical_checks.R")
+source("R/logical_checks.R")
 
 
 # remove extra columns  -------------------------------------------- Value Remaining
