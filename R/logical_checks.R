@@ -781,9 +781,9 @@ shifts_and_operationality <- clean_data.tool2$Shifts_Detail |>
       # mutate(sheet = "School_Operationality", Grade_Value = Grade) |>
       filter(!is.na(Grade_Value) & Grade_Value != "") |>
       # arrange(Grade_ID) |>
-      pivot_wider(names_from = Grade_Value, values_from = Grade_Value, values_fill = 0, names_prefix = "grade_", values_fn = length)
-    , by = "Site_Visit_ID" ) |>
-  filter(is_operational == "No")
+      pivot_wider(names_from = Grade_Value, values_from = Grade_Value, values_fill = 0, names_prefix = "grade_", values_fn = length) |>
+      filter(is_operational == "No")
+    , by = "Site_Visit_ID" )
 
 lc_tool2.shift_operationality_and_other <- plyr::rbind.fill(
   # Flagging if a not operational grade is reported for the shift
