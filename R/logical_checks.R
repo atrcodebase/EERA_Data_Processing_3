@@ -1647,7 +1647,7 @@ lc_tool3 <- plyr::rbind.fill(
       Related_value,
       KEY,
       Issue,
-      Issue
+      sheet
     ),
   
   #Flagging if sum of attended male and female is not equal to total
@@ -1672,7 +1672,7 @@ lc_tool3 <- plyr::rbind.fill(
       Related_value,
       KEY,
       Issue,
-      Issue
+      sheet
     ),
   
   #Flagging if sum of permanent absent male and female is not equal to total
@@ -1697,7 +1697,7 @@ lc_tool3 <- plyr::rbind.fill(
       Related_value,
       KEY,
       Issue,
-      Issue
+      sheet
     )
   ) |> 
   mutate(tool = "Tool 3 - Headcount", Old_value = as.character(Old_value))
