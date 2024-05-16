@@ -143,7 +143,7 @@ clean_data.tool9 <- raw_data.tool9
 # Tool 0
 for(sheet in names(clean_data.tool0)){
   # Apply Log
-  clean_data.tool0[[sheet]] <- apply_log(data=clean_data.tool0[[sheet]], log = filter(correction_log_ready_ps, tool == "Tool - Data Entry" & Tab_Name == sheet))
+  clean_data.tool0[[sheet]] <- apply_log(data=clean_data.tool0[[sheet]], log = filter(correction_log_ready_ps, tool == "Tool 0 - Data Entry" & Tab_Name == sheet))
 }
 
 # Tool 1
@@ -444,12 +444,13 @@ correction_log_discrep <- rbind(
   mutate(KEY_join = paste0(KEY, question, old_value, tool, Tab_Name))
 
 # # Data Entry tool
+# sheet = "Tool3_T2_Classes_VD" 
 for(sheet in names(clean_data.tool0)){
   # Compare
   correction_log_discrep <- rbind(
     correction_log_discrep,
     compare_dt(clean_data.tool0[[sheet]], raw_data.tool0[[sheet]]) |>
-      mutate(tool="Tool - Data Entry", Tab_Name = sheet)
+      mutate(tool="Tool 0 - Data Entry", Tab_Name = sheet, KEY_join = paste0(KEY, question, old_value, tool, Tab_Name))
   )
 }
 
