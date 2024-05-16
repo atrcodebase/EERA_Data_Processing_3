@@ -18,6 +18,7 @@ if(!require(atRfunctions)) remotes::install_github("atrcodebase/atRfunctions")
 # Declaring Global Variables ---------------------------------------------------
 data_collection_start_date_ps = as.Date("14.04.2024", format("%d.%m.%Y")) # Confirm with QAT
 data_collection_start_date_cbe = as.Date("06.04.2024", format("%d.%m.%Y")) # Confirm with QAT
+data_collection_end_date = as.Date("16.05.2024",  format("%d.%m.%Y"))
 qa_sheet_url_ps = "https://docs.google.com/spreadsheets/d/1h90Z42H3V8SVKdfoywKc-x8o8m2Xr1JbhrEWykQOHVw/edit#gid=473078450"
 
 
@@ -157,13 +158,6 @@ approved_keys_ps = qa_sheet_ps |>
 
 length(approved_keys_ps) == length(which(qa_sheet_ps$qa_status == "APPROVED" | qa_sheet_ps$qa_status == "APPROVED (EXCEL CHECK ONLY)"))
 
-# Extract Pending interview to be included for weekly report
-pending_key_ps = qa_sheet_ps |>
-  filter(qa_status %in% c("PENDING", "PENDING DUE TO GPS POINT")) |>
-  pull(KEY) |> unique()
-
-length(pending_key_ps) == length(which(qa_sheet_ps$qa_status == "PENDING" | qa_sheet_ps$qa_status == "PENDING DUE TO GPS POINT"))
-
 # Extract deleted KEYs to be removed from data sets
 deleted_keys_ps = deletion_log |> filter(Sample_Type == "Public School") |> pull(KEY_Unique)
 
@@ -204,12 +198,6 @@ approved_keys_cbe = qa_sheet_cbe |>
 
 length(approved_keys_cbe) == length(which(qa_sheet_cbe$qa_status == "APPROVED" | qa_sheet_cbe$qa_status == "APPROVED (EXCEL CHECK ONLY)"))
 
- # Extract Pending interview to be included for weekly report
-pending_key_cbe = qa_sheet_cbe |>
-  filter(qa_status %in% c("PENDING","PENDING DUE TO GPS POINT")) |>
-  pull(KEY) |> unique()
-
-length(pending_key_cbe) == length(which(qa_sheet_cbe$qa_status == "PENDING" | qa_sheet_cbe$qa_status == "PENDING DUE TO GPS POINT"))
 
 # Extract deleted KEYs to be removed from data sets
 deleted_keys_cbe = deletion_log |> filter(Sample_Type == "CBE") |> pull(KEY_Unique)
@@ -224,6 +212,9 @@ correction_log_cbe <- correction_log_cbe %>%
     new_value = "New_Value",
     tool = "Tool"
   )
+
+# To be added to the data sets -------------------------------------------- DONE
+source("R/tobe_added_to_datasets.R")
 
 
 # convert numeric dates to date and time formats -------------------------- DONE
