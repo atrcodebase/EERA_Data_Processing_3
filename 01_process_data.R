@@ -87,7 +87,8 @@ correction_log = plyr::rbind.fill(
   read_sheet(qa_sheet_url_ps, sheet = "Correction_Log Parent") |> rename(Key = KEY) |> mutate(Tool = "Tool 6 - Parent", Index = as.character(Index), old_value = as.character(old_value), New_Value = as.character(New_Value), Remarks = as.character(Remarks)),
   read_sheet(qa_sheet_url_ps, sheet = "Correction _Log Shura") |> mutate(Tool = "Tool 7 - Shura", Index = as.character(Index), old_value = as.character(old_value), New_Value = as.character(New_Value), Key = as.character(Key)),
   read_sheet(qa_sheet_url_ps, sheet = "Correction_Log Data_Entry") |> mutate(Tool = "Tool 0 - Data Entry", Index = NA_character_,  old_value = as.character(old_value), New_Value = as.character(New_Value), Key = as.character(Key))
-)
+) |>
+  filter(Province != "Kandahar")
 
 
 # Turn NULL values to NA for old and new value columns
@@ -113,7 +114,9 @@ correction_log_cbe <- plyr::rbind.fill(
   read_sheet(qa_sheet_url_ps, sheet = "Correction _Log Class") |> mutate(Tool = "Tool 8 - Class", Index = as.character(Index), old_value = as.character(old_value), New_Value = as.character(New_Value), Key = as.character(Key)),
   read_sheet(qa_sheet_url_ps, sheet = "Correction _Log IP") |> mutate(Tool = "Tool 9 - IP", Index = as.character(Index), old_value = as.character(old_value), New_Value = as.character(New_Value), KEY_Unique = as.character(KEY_Unique),
                                                                       Key = as.character(Key))
-)
+) |>
+filter(Province != "Kandahar")
+
 
 # Turn NULL values to NA for old and new value columns
 correction_log_cbe <- correction_log_cbe %>% 
