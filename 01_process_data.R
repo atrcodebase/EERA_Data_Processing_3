@@ -151,7 +151,12 @@ qa_sheet_ps <- qa_sheet_ps |>
     )
   )
 
+# With KDR
 table(qa_sheet_ps$qa_status, qa_sheet_ps$tool, useNA = "always") %>% 
+  addmargins(2)
+
+# Without KDR
+table(qa_sheet_ps |> filter(Province != "Kandahar") |> pull(qa_status), qa_sheet_ps |> filter(Province != "Kandahar") |> pull(tool), useNA = "always") %>% 
   addmargins(2)
 
 # Extract Approved Interviews
@@ -193,6 +198,10 @@ qa_sheet_cbe <- qa_sheet_cbe |>
 table(qa_sheet_cbe$qa_status, qa_sheet_cbe$tool, useNA = "always") %>% 
   addmargins(2)
 
+# Without KDR
+table(qa_sheet_cbe |> filter(Province != "Kandahar") |> pull(qa_status), qa_sheet_cbe |> filter(Province != "Kandahar") |> pull(tool), useNA = "always") %>% 
+  addmargins(2)
+
 
 # Extract Approved Interviews
 approved_keys_cbe = qa_sheet_cbe |> 
@@ -223,8 +232,10 @@ source("R/tobe_added_to_datasets.R")
 # convert numeric dates to date and time formats -------------------------- DONE
 source("R/convert_numbers_to_date_time.R")
 
+
 # Apply correction log ---------------------------------------------------- DONE
 if(nrow(correction_log_ps) > 0 | nrow(correction_log_cbe)) source("R/apply_correction_log.R")
+
 
 # Remove the rejected and pilot interviews -------------------------------- DONE
 source("R/remove_rejected_interviews.R")
@@ -285,8 +296,30 @@ source("R/remove_extra_columns.R")
 source("R/attach_calculate_label.R")
 
 
+# t0_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool0_Public_School_&_CBE_Data_Entry_Sample.xlsx")
+# t1_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool1_Public_School_Headmaster_Sample.xlsx")
+# t2_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool2_Public_School_Light_Sample.xlsx")
+# t3_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool3_Public_School_Headcount_Sample.xlsx")
+# t4_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool4_Public_School_Teacher_Sample.xlsx")
+# t5_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool5_Public_School_WASH_Sample.xlsx")
+# t6_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool6_Public_School_&_CBE_Parent_Sample.xlsx")
+# t7_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool7_Public_School_&_CBE_Shura_Sample.xlsx")
+# t8_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool8_CBE_Class_Sample.xlsx")
+# t9_sample <- read_xlsx_sheets("./output/cleaned_dfs/sterilized/labeled/Sample/QA/EERA_R3_Tool9_CBE_IP_Sample.xlsx")
+# 
+# df1 <- clean_data.tool9_for_client
+# df2 <- t9_sample
+# 
+# length(df1) == length(df2)
+# # names(df1)
+# # sheet = "Support_Respondents"
+# for(sheet in names(df1)){
+#   # print(names(df1[[sheet]][!names(df1[[sheet]]) %in% names(df2[[sheet]])]))
+#   print(names(df2[[sheet]][!names(df2[[sheet]]) %in% names(df1[[sheet]])]))
+# }
+
 # change 7777, 8888, 9999 to Labels  -------------------------------------- NOT
-# source("R/recode_to_na.R")
+source("R/recode_to_na.R")
 
 
 # export data sets and issues --------------------------------------------- DONE
