@@ -1,5 +1,15 @@
 ## Turn values to Lables -------------------------------------------------------
 # Tool 2
+clean_data.tool2_for_client$data <- clean_data.tool2_for_client$data |>
+  mutate(
+    E6 = as.character(E6),
+    E6 = case_when(
+      E6 == "9999" ~ "Don't wish to respond",
+      E6 == "8888" ~ "I don't know",
+      TRUE ~ E6
+    )
+  )
+
 clean_data.tool2_for_client$Public_Stationary_Kit_Group <- clean_data.tool2_for_client$Public_Stationary_Kit_Group |>
   mutate(
     H9_Yes = as.character(H9_Yes),
@@ -10,6 +20,17 @@ clean_data.tool2_for_client$Public_Stationary_Kit_Group <- clean_data.tool2_for_
     )
   )
 
+clean_data.tool2_for_client$data <- clean_data.tool2_for_client$data |>
+  mutate(
+    i4_Yes = as.character(i4_Yes),
+    i4_Yes = case_when(
+      i4_Yes == "9999" ~ "Don't wish to respond",
+      i4_Yes == "8888" ~ "I don't know",
+      TRUE ~ i4_Yes
+    )
+  )
+
+
 clean_data.tool2_for_client$Teachers_Pack_Group <- clean_data.tool2_for_client$Teachers_Pack_Group |>
   mutate(
     i9_Yes = as.character(i9_Yes),
@@ -19,6 +40,17 @@ clean_data.tool2_for_client$Teachers_Pack_Group <- clean_data.tool2_for_client$T
       TRUE ~ i9_Yes
     )
   )
+
+clean_data.tool2_for_client$data <- clean_data.tool2_for_client$data |>
+  mutate(
+    J4_Yes = as.character(J4_Yes),
+    J4_Yes = case_when(
+      J4_Yes == "9999" ~ "Don't wish to respond",
+      J4_Yes == "8888" ~ "I don't know",
+      TRUE ~ J4_Yes
+    )
+  )
+
 
 clean_data.tool2_for_client$Students_Pack_Group <- clean_data.tool2_for_client$Students_Pack_Group |>
   mutate(
@@ -118,28 +150,28 @@ clean_data.tool3_for_client$Tool3_Grades_Repeat <- clean_data.tool3_for_client$T
 # # Tool 4
 # 
 # 
-# # Tool 5
-# clean_data.tool5_for_client$data <- clean_data.tool5_for_client$data |>
-#   mutate(
-#     C6_Male = as.character(C6_Male),
-#     C6_Female = as.character(C6_Female),
-#     C6_Unisex = as.character(C6_Unisex),
-#     
-#     C6_Male = case_when(
-#       C6_Male == "777" ~ "Not Applicable",
-#       TRUE ~ C6_Male
-#     ),
-#     
-#     C6_Female = case_when(
-#       C6_Female == "777" ~ "Not Applicable",
-#       TRUE ~ C6_Female
-#     ),
-#     
-#     C6_Unisex = case_when(
-#       C6_Unisex == "777" ~ "Not Applicable",
-#       TRUE ~ C6_Unisex
-#     )
-#   )
+# Tool 5
+clean_data.tool5_for_client$data <- clean_data.tool5_for_client$data |>
+  mutate(
+    C6_Male = as.character(C6_Male),
+    C6_Female = as.character(C6_Female),
+    C6_Unisex = as.character(C6_Unisex),
+
+    C6_Male = case_when(
+      C6_Male == "777" ~ "Not Applicable",
+      TRUE ~ C6_Male
+    ),
+
+    C6_Female = case_when(
+      C6_Female == "777" ~ "Not Applicable",
+      TRUE ~ C6_Female
+    ),
+
+    C6_Unisex = case_when(
+      C6_Unisex == "777" ~ "Not Applicable",
+      TRUE ~ C6_Unisex
+    )
+  )
 
 # Tool 6
 clean_data.tool6_for_client$data <- clean_data.tool6_for_client$data |> 
