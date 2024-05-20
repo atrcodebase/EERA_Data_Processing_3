@@ -30,7 +30,7 @@ if(nrow(tob_added_light_opt) > 0){
 }
 
 if(nrow(tob_added_light_shift) > 0){
-  raw_data.tool2$Shifts_Detail <- raw_data.tool2$Shifts_Detail$`SET-OF-Shifts_Detail` |>
+  raw_data.tool2$Shifts_Detail <- raw_data.tool2$Shifts_Detail |>
     plyr::rbind.fill(
       tob_added_light_shift
     ) |>
