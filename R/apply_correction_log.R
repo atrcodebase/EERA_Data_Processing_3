@@ -200,6 +200,14 @@ if (any(correction_log_ready_ps$tool == tool_name)) {
 # Tool 5
 tool_name <- "Tool 5 - WASH"
 if (any(correction_log_ready_ps$tool == tool_name)) {
+  for(sheet in names(raw_data.tool5)){
+    
+    raw_data.tool5[[sheet]] <- raw_data.tool5[[sheet]] |>
+      mutate(
+        across(ends_with("_Translation"), as.character)
+      )
+  }
+  
   clean_data.tool5$data <- raw_data.tool5$data |> apply_log(log = correction_log_ready_ps |> filter(tool == tool_name & Tab_Name == "data"))
   clean_data.tool5$Under_Construction_Toilets <- raw_data.tool5$Under_Construction_Toilets |> apply_log(log = correction_log_ready_ps |> filter(tool == tool_name & Tab_Name == "Under_Construction_Toilets"))
   clean_data.tool5$Useable_Toilets <- raw_data.tool5$Useable_Toilets |> apply_log(log = correction_log_ready_ps |> filter(tool == tool_name & Tab_Name == "Useable_Toilets"))
@@ -255,6 +263,14 @@ if (any(correction_log_ready_cbe$tool == tool_name)) {
 # Tool 9
 tool_name <- "Tool 9 - IP"
 if (any(correction_log_ready_cbe$tool == tool_name)) {
+  for(sheet in names(raw_data.tool9)){
+    
+    raw_data.tool9[[sheet]] <- raw_data.tool9[[sheet]] |>
+      mutate(
+        across(ends_with("_Translation"), as.character)
+      )
+  }
+  
   clean_data.tool9$data <- raw_data.tool9$data |> apply_log(log = correction_log_ready_cbe |> filter(tool == tool_name & Tab_Name == "data"))
   clean_data.tool9$Relevant_photos <- raw_data.tool9$Relevant_photos |> apply_log(log = correction_log_ready_cbe |> filter(tool == tool_name & Tab_Name == "Relevant_photos"))
 }
