@@ -9,7 +9,7 @@ extra_cols.tool9 <- c(
   "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id", "Province_Climate", "Survey_Language", "Survey_Language_Other",
   "Sample_info_correct", "Village", "instanceID", "formdef_version", 
-  'ID_Check', 'TPMA_Location_Name', 'Entity_Type',	'Academic_Year',	'acknowledge', 'qa_log_status', 'AA_Full',# NEW
+  'ID_Check', 'TPMA_Location_Name', 'Entity_Type',	'acknowledge', 'qa_log_status', 'AA_Full',# NEW
   
   
   # PII 
@@ -18,6 +18,9 @@ extra_cols.tool9 <- c(
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
   'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  "Geopoint0-Latitude",  "Geopoint0-Longitude", "Geopoint0-Altitude",  "Geopoint0-Accuracy",  "Geopoint3-Latitude",  "Geopoint3-Longitude", "Geopoint3-Altitude",  "Geopoint3-Accuracy", 
+  "Geopoint4-Latitude",  "Geopoint4-Longitude", "Geopoint4-Altitude",  "Geopoint4-Accuracy",  "Geopoint5-Latitude",  "Geopoint5-Longitude", "Geopoint5-Altitude",  "Geopoint5-Accuracy",
+  "Geopoint6-Latitude",  "Geopoint6-Longitude", "Geopoint6-Altitude",  "Geopoint6-Accuracy",
   
   
   # URL
@@ -42,12 +45,13 @@ extra_cols.tool9 <- c(
 extra_cols.tool8 <- c(
   # Meta Cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Date_And_Time", "Surveyor_Name", "CBE_KEY", "Province_filter",
-  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "School_CBE_Name_DariPashto", "Type_Of_School_CBE_Based_On_The_Sample", "Sector", "Line_Ministry_Name",
+  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "School_CBE_Name_DariPashto", "Sector", "Line_Ministry_Name",
   "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id", "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "Sample_info_correct", "Village",
   "instanceID", "formdef_version",
-  "ID_Check", 'TPMA_Location_Name',	'Entity_Type',	'Academic_Year',	'acknowledge', 'indx1', 'indx2', 'indx3', # NEW
+  "ID_Check", 'TPMA_Location_Name',	'Entity_Type',	'acknowledge', 'indx1', 'indx2', 'indx3', # NEW
   'indx4', 'indx5', 'Y_indx1', 'qa_log_status', 'AA_Full', 'AA_Closure_Interview', 'AA_CBE_Open', 'AA_TLM', 'O10_0_not_in_use', 'Q10_0_not_in_use', 'S10_0_not_in_use',# NEW 
+  "S10_0_not_in_use.re_calc", 'Q10_0_not_in_use.re_calc',
   
   # PII 
   "C2", "Respondent_Phone_Number1", "Respondent_Phone_Number2", "Respondent_Full_Name", "Respondent1_Phone_Number", "Respondent2_Phone_Number", "E18",
@@ -55,6 +59,9 @@ extra_cols.tool8 <- c(
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
   'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy',# NEW
+  "Geopoint0-Latitude",  "Geopoint0-Longitude", "Geopoint0-Altitude",  "Geopoint0-Accuracy",  "Geopoint3-Latitude",  "Geopoint3-Longitude", "Geopoint3-Altitude",  "Geopoint3-Accuracy", 
+  "Geopoint4-Latitude",  "Geopoint4-Longitude", "Geopoint4-Altitude",  "Geopoint4-Accuracy",  "Geopoint5-Latitude",  "Geopoint5-Longitude", "Geopoint5-Altitude",  "Geopoint5-Accuracy", 
+  "Geopoint6-Latitude",  "Geopoint6-Longitude", "Geopoint6-Altitude",  "Geopoint6-Accuracy",
   
   # URL
   "text_audit_full",
@@ -65,7 +72,7 @@ extra_cols.tool8 <- c(
   'B5_2_Caption', 'O10_Not_In_Use_Caption', 'S10_Not_In_Use_Caption', 'Q10_Caption', 'Q10_Not_In_Use_Caption',# NEW 
   
   # Notes and Re-coded
-  "Sample_Type", "Headcount_Total_Students.re_calc",
+  "Sample_Type", "Headcount_Total_Students.re_calc", 'O10_0_not_in_use.re_calc',
   
   # repeat counter and SET-OFF
   "Classes_count",	"SET-OF-Classes", "Adults_At_The_CBE_count",	"SET-OF-Adults_At_The_CBE", "Section_2_2_3_Attendance_Record_Check_CBS_count",	"SET-OF-Section_2_2_3_Attendance_Record_Check_CBS",
@@ -93,12 +100,12 @@ extra_cols.tool8 <- c(
 extra_cols.tool7 <- c(
   # Meta Cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Surveyor_Name", "Province_filter", "CBE_KEY",
-  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",	"Type_Of_School_CBE_Based_On_The_Sample",
+  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",
   "Sector", "Line_Ministry_Name", "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id",
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other",  "Sample_info_correct", "Village",
   "instanceID", "formdef_version",
-  "ID_Check",'Type_of_CBE',	'TPMA_Location_Name',	'Entity_Type',	'Academic_year',	'acknowledge', 'indx1', 'qa_log_status', 'AA_Full',# NEW
+  "ID_Check",'Type_of_CBE',	'TPMA_Location_Name',	'Entity_Type',	'acknowledge', 'indx1', 'qa_log_status', 'AA_Full',# NEW
   
   
   # PII 
@@ -108,6 +115,9 @@ extra_cols.tool7 <- c(
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
   'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  "Geopoint0-Latitude",   "Geopoint0-Longitude",  "Geopoint0-Altitude",   "Geopoint0-Accuracy",   "Geopoint3-Latitude",   "Geopoint3-Longitude",  "Geopoint3-Altitude",   "Geopoint3-Accuracy",  
+  "Geopoint4-Latitude",   "Geopoint4-Longitude",  "Geopoint4-Altitude",   "Geopoint4-Accuracy",   "School_Photo",         "School_Photo_Caption", "School_Photo_QA",      "Geopoint5-Latitude",  
+  "Geopoint5-Longitude",  "Geopoint5-Altitude",   "Geopoint5-Accuracy",   "Geopoint6-Latitude",   "Geopoint6-Longitude",  "Geopoint6-Altitude",   "Geopoint6-Accuracy",
   
   # URL
   "text_audit_full",
@@ -128,12 +138,12 @@ extra_cols.tool7 <- c(
 extra_cols.tool6 <- c(
   # Meta Cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Surveyor_Name", "Province_filter", "CBE_KEY",
-  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",	"Type_Of_School_CBE_Based_On_The_Sample",
+  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",
   "Sector", "Line_Ministry_Name", "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id",
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "Sample_info_correct", "Village",
   "instanceID", "formdef_version",
-  "ID_Check", 'Type_of_CBE',	'TPMA_Location_Name',	'Entity_Type',	'Academic_year',	'acknowledge',# NEW
+  "ID_Check", 'Type_of_CBE',	'TPMA_Location_Name',	'Entity_Type', 'acknowledge',# NEW
   "indx1", 'qa_log_status', 'AA_Full',# NEW
   
   
@@ -143,6 +153,9 @@ extra_cols.tool6 <- c(
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
   'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  "Geopoint0-Latitude",   "Geopoint0-Longitude",  "Geopoint0-Altitude",   "Geopoint0-Accuracy",   "Geopoint3-Latitude",   "Geopoint3-Longitude",  "Geopoint3-Altitude",   "Geopoint3-Accuracy",  
+  "Geopoint4-Latitude",   "Geopoint4-Longitude",  "Geopoint4-Altitude",   "Geopoint4-Accuracy",   "School_Photo",         "School_Photo_Caption", "School_Photo_QA",      "Geopoint5-Latitude",  
+  "Geopoint5-Longitude",  "Geopoint5-Altitude",   "Geopoint5-Accuracy",   "Geopoint6-Latitude",   "Geopoint6-Longitude",  "Geopoint6-Altitude",   "Geopoint6-Accuracy",
   
   
   # URL
@@ -162,12 +175,12 @@ extra_cols.tool6 <- c(
 extra_cols.tool5 <- c(
   # Meta Cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Surveyor_Name", "Province_filter", "CBE_KEY",
-  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",	"Type_Of_School_CBE_Based_On_The_Sample",
+  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",
   "Sector", "Line_Ministry_Name", "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id",
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "Village",
   "instanceID", "formdef_version",
-  "ID_Check","Academic_Year",	"Sample_info_correct",	"acknowledge", 'TPMA_Location_Name',	'Entity_Type',# NEW
+  "ID_Check",	"Sample_info_correct",	"acknowledge", 'TPMA_Location_Name',	'Entity_Type',# NEW
   'qa_log_status', 'AA_Full',# NEW
   
   # PII 
@@ -176,6 +189,9 @@ extra_cols.tool5 <- c(
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
   'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  "Geopoint0-Latitude",   "Geopoint0-Longitude",  "Geopoint0-Altitude",   "Geopoint0-Accuracy",   "Geopoint3-Latitude",   "Geopoint3-Longitude",  "Geopoint3-Altitude",   "Geopoint3-Accuracy",  
+  "Geopoint4-Latitude",   "Geopoint4-Longitude",  "Geopoint4-Altitude",   "Geopoint4-Accuracy",   "School_Photo",         "School_Photo_Caption", "School_Photo_QA",      "Geopoint5-Latitude",  
+  "Geopoint5-Longitude",  "Geopoint5-Altitude",   "Geopoint5-Accuracy",   "Geopoint6-Latitude",   "Geopoint6-Longitude",  "Geopoint6-Altitude",   "Geopoint6-Accuracy",
   
   
   # URL
@@ -198,12 +214,12 @@ extra_cols.tool5 <- c(
 extra_cols.tool4 <- c(
   # Meta Cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Surveyor_Name", "Province_filter", "CBE_KEY",
-  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",	"Type_Of_School_CBE_Based_On_The_Sample",
+  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",
   "Sector", "Line_Ministry_Name", "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id",
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id",  "Province_Climate", "Survey_Language", "Survey_Language_Other", "Village",
   "instanceID", "formdef_version",
-  "ID_Check",  'TPMA_Location_Name',	"Entity_Type",	"Academic_Year",	"acknowledge",# NEW
+  "ID_Check",  'TPMA_Location_Name',	"Entity_Type", "acknowledge",# NEW
   'G8_Translation', "H3_Translation",# NEW
   'qa_log_status', 'AA_Full', 'indx1',# NEW
   
@@ -213,6 +229,9 @@ extra_cols.tool4 <- c(
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
   'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  "Geopoint0-Latitude",   "Geopoint0-Longitude",  "Geopoint0-Altitude",  "Geopoint0-Accuracy",   "Geopoint3-Latitude",   "Geopoint3-Longitude",  "Geopoint3-Altitude",   "Geopoint3-Accuracy",  
+  "School_Photo",         "School_Photo_Caption", "School_Photo_QA",      "Geopoint4-Latitude",   "Geopoint4-Longitude",  "Geopoint4-Altitude",   "Geopoint4-Accuracy",   "Geopoint5-Latitude", 
+  "Geopoint5-Longitude",  "Geopoint5-Altitude",   "Geopoint5-Accuracy",   "Geopoint6-Latitude",   "Geopoint6-Longitude",  "Geopoint6-Altitude",   "Geopoint6-Accuracy",
   
   # URL
   "text_audit_full",
@@ -234,14 +253,14 @@ extra_cols.tool4 <- c(
 extra_cols.tool3 <- c(
   # Meta Cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Surveyor_Name", "Province_filter", "CBE_KEY",
-  "Province_DariPashto", "District_DariPashto", "Region_Pcode", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",	 "School_Program_Sample", "Type_Of_School_CBE_Based_On_The_Sample",
+  "Province_DariPashto", "District_DariPashto", "Region_Pcode", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",	 "School_Program_Sample",
   "Sector", "Line_Ministry_Name", "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id", "School_Property_Sample", "School_Shifts_Sample",
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id", "Class1_N_Sample", "Class2_N_Sample", "Class3_N_Sample", "Class4_N_Sample", "Class5_N_Sample", "Class6_N_Sample", "Class7_N_Sample", "Class8_N_Sample", "Class9_N_Sample",
   "Class10_N_Sample", "Class11_N_Sample", "Class12_N_Sample", "School_Status_Sample", "School_Status_EMIS",  "Province_Climate", "Survey_Language", "Survey_Language_Other",
   "Classes", # To be confirmed
   "Village", "instanceID", "formdef_version",
-  "ID_Check", "TPMA_Location_Name", "Entity_Type",	"Academic_Year",	"acknowledge",  # NEW
+  "ID_Check", "TPMA_Location_Name", "Entity_Type",	"acknowledge",  # NEW
   "Grade_Class_1",	"Grade_Class_2",	"Grade_Class_3",	"Grade_Class_4",	"Grade_Class_5",	"Grade_Class_6", #NEW
   "Grade_Class_7", "Grade_Class_8",	"Grade_Class_9",	"Grade_Class_10",	"join_indx2", # NEW
   'qa_log_status', 'indx1', 'indx2',  'E1_Field_Value', 'AA_Full', 'Response_Code',# NEW
@@ -253,6 +272,9 @@ extra_cols.tool3 <- c(
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
   'Geopoint2-Latitude',	'Geopoint2-Longitude',	'Geopoint2-Altitude',	'Geopoint2-Accuracy', # NEW
+  "Geopoint0-Latitude",   "Geopoint0-Longitude",  "Geopoint0-Altitude",   "Geopoint0-Accuracy",   "Geopoint3-Latitude",   "Geopoint3-Longitude",  "Geopoint3-Altitude",   "Geopoint3-Accuracy",  
+  "School_Photo",         "School_Photo_Caption", "School_Photo_QA",      "Geopoint4-Latitude",   "Geopoint4-Longitude",  "Geopoint4-Altitude",   "Geopoint4-Accuracy",   "Geopoint5-Latitude",  
+  "Geopoint5-Longitude",  "Geopoint5-Altitude",   "Geopoint5-Accuracy",   "Geopoint6-Latitude",   "Geopoint6-Longitude",  "Geopoint6-Altitude",   "Geopoint6-Accuracy",
   
   # URL
   "text_audit_full",
@@ -283,12 +305,12 @@ extra_cols.tool3 <- c(
 extra_cols.tool2 <- c(
   # Meta Cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Surveyor_Name", "Province_filter", "CBE_KEY",
-  "Province_DariPashto", "District_DariPashto", "Region_Pcode", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto", "Type_Of_School_CBE_Based_On_The_Sample",
+  "Province_DariPashto", "District_DariPashto", "Region_Pcode", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",
   "Sector", "Line_Ministry_Name", "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id",
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id", "Province_Climate", "Survey_Language", "Survey_Language_Other",
   "Village", "instanceID", "formdef_version",
-  "ID_Check", "TPMA_Location_Name","Entity_Type", "Academic_Year",	"acknowledge", #NEW
+  "ID_Check", "TPMA_Location_Name","Entity_Type",	"acknowledge", #NEW
   'qa_log_status', 'AA_Full', 'AA_Closure_Interview', 'indx3', 'AA_TLM',# NEW
   
   
@@ -298,6 +320,9 @@ extra_cols.tool2 <- c(
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
   "Geopoint2-Latitude",	"Geopoint2-Longitude",	"Geopoint2-Altitude",	"Geopoint2-Accuracy", # NEW
+  "Geopoint0-Latitude",  "Geopoint0-Longitude", "Geopoint0-Altitude",  "Geopoint0-Accuracy",  "Geopoint3-Latitude",  "Geopoint3-Longitude", "Geopoint3-Altitude",  "Geopoint3-Accuracy", 
+  "Geopoint4-Latitude",  "Geopoint4-Longitude", "Geopoint4-Altitude",  "Geopoint4-Accuracy",  "Geopoint5-Latitude",  "Geopoint5-Longitude", "Geopoint5-Altitude",  "Geopoint5-Accuracy", 
+  "Geopoint6-Latitude",  "Geopoint6-Longitude", "Geopoint6-Altitude",  "Geopoint6-Accuracy",
   
   # URL
   "text_audit_full",
@@ -331,13 +356,13 @@ extra_cols.tool2 <- c(
 extra_cols.tool1 <- c(
   # Meta cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Surveyor_Name", "ID_Check", "Province_filter",
-  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto", "Type_Of_School_CBE_Based_On_The_Sample",
+  "Province_DariPashto", "District_DariPashto", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",
   "Sector",	"Line_Ministry_Name",	"Line_Ministry_Project_Id",	"Line_Ministry_SubProject_Id",	"Type_Of_Implementing_Partner",	"Type_Of_Site_Visit",	"Type_Of_Visit",
   "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",	"tpma_location_id", "Line_Ministry_Sub_Project_Name_And_Description",	
   "Reporting_Period",	"Class1_N_Sample",	"Class2_N_Sample",	"Class3_N_Sample",	"Class4_N_Sample",	"Class5_N_Sample",	"Class6_N_Sample",	"Class7_N_Sample",	"Class8_N_Sample",
   "Class9_N_Sample",	"Class10_N_Sample",	"Class11_N_Sample",	"Class12_N_Sample", "Province_Climate", "Survey_Language", "Survey_Language_Other",
   "Village", "instanceID", "formdef_version", 
-  "Type_Of_School_CBE_Based_On_The_Sample_DariPashto", "TPMA_Location_Name", "Entity_Type", "Academic_Year", "acknowledge", # New
+  "Type_Of_School_CBE_Based_On_The_Sample_DariPashto", "TPMA_Location_Name", "Entity_Type", "acknowledge", # New
   'qa_log_status', 'indx1', 'indx3', 'F1_Value', 'F3_Value', 'Sub_indx', 'subj_index', 'AA_Full', 'AA_Closure_Interview', 'AA_Curriculum', 'AA_SMS',# NEW
   
   # PII
@@ -346,6 +371,9 @@ extra_cols.tool1 <- c(
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy", "Geopoint2-Latitude", "Geopoint2-Longitude", "Geopoint2-Altitude", "Geopoint2-Accuracy",
+  "Geopoint0-Latitude",  "Geopoint0-Longitude", "Geopoint0-Altitude",  "Geopoint0-Accuracy",  "Geopoint3-Latitude",  "Geopoint3-Longitude", "Geopoint3-Altitude",  "Geopoint3-Accuracy",
+  "Geopoint4-Latitude",  "Geopoint4-Longitude", "Geopoint4-Altitude",  "Geopoint4-Accuracy",  "Geopoint5-Latitude",  "Geopoint5-Longitude", "Geopoint5-Altitude",  "Geopoint5-Accuracy", 
+  "Geopoint6-Latitude",  "Geopoint6-Longitude", "Geopoint6-Altitude",  "Geopoint6-Accuracy",
   
   
   # URLs
@@ -373,6 +401,7 @@ extra_cols.tool1 <- c(
   "School_indx", "School_rep",
   "Weekly_Schedule_Old_count",	"SET-OF-Weekly_Schedule_Old", "Weekly_Schedule_New_count",	"SET-OF-Weekly_Schedule_New", # NEW
   "Additional_Subjects_count",	"SET-OF-Additional_Subjects",	"Count_Additional_Subjects",  'Count_Weekly_Schedule_Old', 'Count_Weekly_Schedule_New',# NEW
+  'Count_Support_Respondents',
   
   
   # FDE Cols
@@ -386,18 +415,22 @@ extra_cols.tool1 <- c(
 extra_cols.tool0 <- c(
   # Meta Cols
   "Passcode", "deviceid", "subscriberid", "simid", "devicephonenum", "username", "duration", "device_info", "comments", "Surveyor_Name", "Province_filter", "CBE_KEY",
-  "Province_DariPashto", "District_DariPashto", "Region_Pcode", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto", "Type_Of_School_CBE_Based_On_The_Sample",
+  "Province_DariPashto", "District_DariPashto", "Region_Pcode", "Village_DariPashto", "Date_And_Time", "School_CBE_Name_DariPashto",
   "Sector", "Line_Ministry_Name", "Line_Ministry_Project_Id", "Line_Ministry_SubProject_Id", "Province_Climate",
   "Line_Ministry_Sub_Project_Name_And_Description", "Type_Of_Implementing_Partner", "Type_Of_Site_Visit", "Type_Of_Visit", "If_not_a_first_Site_Visit_state_Original_Site_Visit_ID",
   "Reporting_Period", "tpma_location_id", "Survey_Language", "Survey_Language_Other", "Sample_info_correct", "Village", "instanceID", "formdef_version",
-  'indx1', 'indx2', 'qa_log_status', 'indx4', 'Tool1_Timetable_Field_Value', 'Tool1_Timetable_Year_Value', 'Tool1_Timetable1_Field_Value', 'Tool1_Timetable2_Field_Value',# NEW
-  'Tool1_Timetable3_Field_Value', 'Tool1_Timetable4_Field_Value', 'tool3_t3_matching_flag', 'tool3_headcount_conducted', 'tool2_total_compare', 'tool3_t2_variance_calculate',# NEW
+  'indx1', 'indx2', 'qa_log_status', 'indx4', 'Tool1_Timetable_Field_Value', 'Tool1_Timetable_Year_Value',# NEW
+  'Tool1_Timetable4_Field_Value', 'tool3_t3_matching_flag', 'tool3_headcount_conducted', 'tool2_total_compare', 'tool3_t2_variance_calculate',# NEW
+  "tool3_t2_variance_calculate.re_calc", "Tool3_Headcount_Conducted.re_calc",
   
   # PII 
   "Data_Entry_Clerk_Name",
   
   # GPS
   "Geopoint1-Latitude",	"Geopoint1-Longitude",	"Geopoint1-Altitude",	"Geopoint1-Accuracy",
+  "Geopoint0-Latitude",  "Geopoint0-Longitude", "Geopoint0-Altitude",  "Geopoint0-Accuracy",  "Geopoint3-Latitude",  "Geopoint3-Longitude", "Geopoint3-Altitude",  "Geopoint3-Accuracy", 
+  "Geopoint4-Latitude",  "Geopoint4-Longitude", "Geopoint4-Altitude",  "Geopoint4-Accuracy",  "Geopoint5-Latitude",  "Geopoint5-Longitude", "Geopoint5-Altitude",  "Geopoint5-Accuracy", 
+  "Geopoint6-Latitude",  "Geopoint6-Longitude", "Geopoint6-Altitude",  "Geopoint6-Accuracy",
   
   # URL
   "text_audit_full",
@@ -455,7 +488,7 @@ for (sheet in names(clean_data.tool0_for_client)[-1]) {
 clean_data.tool1_for_client$data <- clean_data.tool1$data %>% select(-any_of(c(extra_cols.tool1, qa_cols)))
 
 for (sheet in names(clean_data.tool1_for_client)[-1]){
-  clean_data.tool1_for_client[[sheet]] <- clean_data.tool1_for_client[[sheet]] |> select(-any_of(c(extra_cols.tool1, qa_cols, "starttime", "School_CBE_Gender_Based_On_The_Sample"))) |>
+  clean_data.tool1_for_client[[sheet]] <- clean_data.tool1_for_client[[sheet]] |> select(-any_of(c(extra_cols.tool1, qa_cols, "starttime"))) |>
   select(Site_Visit_ID, EMIS_School_ID_CBE_KEY, everything())
 }
 
@@ -526,4 +559,4 @@ clean_data.tool9_for_client$Relevant_photos <- clean_data.tool9$Relevant_photos 
 # remove extra objects from environment  
 remove(list = c("qa_cols"))
 
-# source("R/remove_extra_columns_value.R")
+source("R/remove_extra_columns_value.R")
