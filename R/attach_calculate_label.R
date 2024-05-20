@@ -14,6 +14,39 @@ clean_data.tool0_for_client$Tool3_Grades_Repeat <- clean_data.tool0_for_client$T
   select(-Tool3_Grades_Field_Value)
 
 
+
+clean_data.tool0_for_client$Tool1_Timetable1_Repeat <- clean_data.tool0_for_client$Tool1_Timetable1_Repeat |>
+  select(-Tool1_Timetable1_Field_Label) |>
+  left_join(
+    kobo_tool.tool0$choices |>
+      filter(list_name == "grades") |>
+      mutate(value = as.integer(value)) |>
+      select(value, Tool1_Timetable1_Field_Label = "label"), by = c("Tool1_Timetable1_Field_Value" = "value")) |>
+  select(any_of(meta_cols2), Tool1_Timetable1_Field_Label, everything()) |>
+  select(-Tool1_Timetable1_Field_Value)
+
+
+clean_data.tool0_for_client$Tool1_Timetable2_Repeat <- clean_data.tool0_for_client$Tool1_Timetable2_Repeat |>
+  select(-Tool1_Timetable2_Field_Label) |>
+  left_join(
+    kobo_tool.tool0$choices |>
+      filter(list_name == "grades") |>
+      mutate(value = as.integer(value)) |>
+      select(value, Tool1_Timetable2_Field_Label = "label"), by = c("Tool1_Timetable2_Field_Value" = "value")) |>
+  select(any_of(meta_cols2), Tool1_Timetable2_Field_Label, everything()) |>
+  select(-Tool1_Timetable2_Field_Value)
+
+
+clean_data.tool0_for_client$Tool1_Timetable3_Repeat <- clean_data.tool0_for_client$Tool1_Timetable3_Repeat |>
+  select(-Tool1_Timetable3_Field_Label) |>
+  left_join(
+    kobo_tool.tool0$choices |>
+      filter(list_name == "grades") |>
+      mutate(value = as.integer(value)) |>
+      select(value, Tool1_Timetable3_Field_Label = "label"), by = c("Tool1_Timetable3_Field_Value" = "value")) |>
+  select(any_of(meta_cols2), Tool1_Timetable3_Field_Label, everything()) |>
+  select(-Tool1_Timetable3_Field_Value)
+
 # Tool2
 clean_data.tool2_for_client$Shifts_Detail <- clean_data.tool2_for_client$Shifts_Detail |>
   select(-Shift_name) |>
